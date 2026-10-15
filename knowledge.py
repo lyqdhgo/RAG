@@ -3,12 +3,14 @@
 """
 
 import datetime
-import os
-import config_data as config
 import hashlib
+import os
+
 from langchain_chroma import Chroma
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+import config_data as config
 
 
 def check_md5(md5_str: str):
@@ -61,7 +63,7 @@ class KnowledgeBaseService(object):
         if check_md5(md5_str):
             return f"文件 {filename} 已经被处理过了，跳过处理"
         if len(data) > config.max_splkit_char_number:
-            knowledge_chunks = list[str] = self.spliter.split_text(data)  # 分割文本
+            knowledge_chunks = self.spliter.split_text(data)  # 分割文本
         else:
             knowledge_chunks = [data]
 

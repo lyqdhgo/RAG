@@ -1,0 +1,15 @@
+{
+    // 保存时自动整理导入（删除未使用import、排序导入）
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    // 开启Pylance自动导入补全，写代码自动提示并添加import
+    "python.analysis.autoImportCompletions": true,
+    // 使用isort作为导入格式化工具（推荐）
+    "python.formatting.importFormatter": "isort",
+    // 可选：isort参数，兼容black格式化
+    "python.analysis.isort.args": [
+        "--profile",
+        "black"
+    ]
+}
